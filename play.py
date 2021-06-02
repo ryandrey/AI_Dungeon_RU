@@ -12,7 +12,7 @@ from gpt3generator import GPT3Generator
 
 
 def get_generator():
-    generator = GPT3Generator(model_path="aoryabinin/aoryabinin_gpt_ai_dungeon_ru")
+    generator = GPT3Generator(model_path="aoryabinin_gpt_ai_dungeon_ru")
     return generator
 
 
