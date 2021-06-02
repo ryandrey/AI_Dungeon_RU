@@ -119,8 +119,8 @@ class GPT3Generator:
         
         self.device = torch.device("cuda" if DTYPE == torch.float64 else "cpu")
         
-        self.tokenizer = GPT2LMHeadModel.from_pretrained(model_path)
-        self.model = GPT2Tokenizer.from_pretrained(model_path)
+        self.tokenizer = GPT2Tokenizer.from_pretrained(model_path)
+        self.model = GPT2LMHeadModel.from_pretrained(model_path)
         self.model.to(DTYPE).to(self.device)
         self.model.eval()
         
