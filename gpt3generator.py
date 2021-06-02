@@ -3,7 +3,7 @@ import os
 import torch
 import torch.nn.functional as F
 import re
-from transformers import GPT2LMHeadModel, GPT2Tokenizer
+from transformers import GPT2LMHeadModel, GPT2Tokenizer, AutoModel, AutoTokenizer
 from getconfig import settings
 from utils import *
 
@@ -119,8 +119,8 @@ class GPT3Generator:
         
         self.device = torch.device("cuda" if DTYPE == torch.float64 else "cpu")
         
-        self.tokenizer = GPT2Tokenizer.from_pretrained(str(model_path))
-        self.model = GPT2LMHeadModel.from_pretrained(str(model_path))
+        self.tokenizer = AutoModel.from_pretrained(model_path)
+        self.model = AutoTokenizer.from_pretrained(model_path)
         self.model.to(DTYPE).to(self.device)
         self.model.eval()
         
