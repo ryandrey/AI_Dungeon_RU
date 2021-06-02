@@ -12,8 +12,7 @@ from gpt3generator import GPT3Generator
 
 
 def get_generator():
-    model = Path("models/" + "GPT3_alex")
-    generator = GPT3Generator(model_path=model)
+    generator = GPT3Generator(model_path="aoryabinin/aoryabinin_gpt_ai_dungeon_ru")
     return generator
 
 
